@@ -1,4 +1,10 @@
-# Machine_Learning-001
+# Machine_Learning-
+
+### ML offers a new way to solve problems, answer complex questions, and create new content. ML can predict the weather, estimate travel times, recommend songs, auto-complete sentences, summarize articles, and generate never-seen-before images.
+
+
+
+
  `GridSearchCV`: Exhaustively tests hyperparameter combinations with cross-validation (used later, mplied).
  `StratifiedKFold`: A cross-validation splitter that preserves class proportions in each fold.
 
