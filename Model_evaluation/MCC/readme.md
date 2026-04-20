@@ -1,12 +1,8 @@
 
 #  Matthews Correlation Coefficient (MCC) in Machine Learning
 
-In the world of **machine learning**, evaluating model performance is crucial.
-While common metrics like **accuracy**, **precision**, **recall**, and **F1-score** are widely known, there’s another powerful metric that often flies under the radar: the **Matthews Correlation Coefficient (MCC)**.
-
 MCC is especially valuable in dealing with **imbalanced datasets**, offering a more balanced evaluation of binary classification models.
 
----
 
 ## What is the Matthews Correlation Coefficient?
 
@@ -24,17 +20,16 @@ The MCC can be understood as a **correlation coefficient** between the predicted
 * **0** → No better than random guessing
 * **-1** → Total disagreement between predictions and true outcomes
 
----
+
 
 ## Mathematical Definition
 
 The Matthews Correlation Coefficient is defined as:
 
-```
-MCC = ((TP * TN) - (FP * FN)) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN))
-```
+$$MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}$$
 
----
+
+
 
 ## Breakdown of the Formula
 
@@ -55,19 +50,8 @@ MCC = ((TP * TN) - (FP * FN)) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + F
   This ensures that the MCC score is **normalized between -1 and +1**, making it interpretable.
   If all predictions are correct (both positives and negatives), the denominator scales accordingly, ensuring a perfect score.
 
----
 
-## MCC Value Ranges
 
-| MCC Value | Meaning                                                    |
-| --------- | ---------------------------------------------------------- |
-| **+1**    | Perfect prediction — complete agreement with actual labels |
-| **0**     | Model performs no better than random guessing              |
-| **-1**    | Total disagreement — worst possible prediction             |
-
-This formula may seem complex at first, but it essentially balances both correct and incorrect classifications for both classes.
-
----
 
 ## Why Use MCC?
 
@@ -79,7 +63,7 @@ MCC solves this issue by considering the **balance between positive and negative
 
 Unlike accuracy, which can give inflated results for imbalanced data, MCC remains reliable **regardless of class distribution**.
 
----
+
 
 ## Key Benefits of MCC
 
@@ -87,7 +71,7 @@ Unlike accuracy, which can give inflated results for imbalanced data, MCC remain
 * **Comprehensive:** Considers all four confusion matrix components
 * **Unbiased:** Not influenced by class imbalance (unlike precision or accuracy)
 
----
+
 
 ## MCC vs Other Metrics
 
@@ -97,7 +81,7 @@ Unlike accuracy, which can give inflated results for imbalanced data, MCC remain
 | **Precision & Recall** | Focus on only positive predictions | Balances both positive and negative predictions |
 | **F1-Score**           | Ignores true negatives             | Includes all confusion matrix terms             |
 
----
+
 
 ## When Should You Use MCC?
 
@@ -107,7 +91,7 @@ MCC is particularly useful when:
 * **Binary classification tasks:** Though extendable to multi-class problems, MCC shines in binary settings.
 * **Real-world scenarios:** Fraud detection, disease diagnosis, or spam filtering — all involve class imbalance.
 
----
+
 
 ## Example: MCC in Python
 
@@ -123,14 +107,6 @@ mcc = matthews_corrcoef(y_true, y_pred)
 print(f"Matthews Correlation Coefficient: {mcc}")
 ```
 
----
 
-## Conclusion
 
-The **Matthews Correlation Coefficient (MCC)** is an essential yet underappreciated metric in the machine learning toolbox.
-Its ability to handle **imbalanced datasets** and provide a **holistic view of classification performance** makes it invaluable for data scientists.
-
-While it may not be the first metric people reach for, MCC can often provide a **more truthful evaluation**, especially in real-world problems with skewed data.
-
-By integrating MCC into your model evaluation process, you can achieve a **more balanced and thorough understanding** of your model’s performance.
 
